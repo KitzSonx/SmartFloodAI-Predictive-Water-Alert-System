@@ -137,3 +137,24 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --- Python Specific ---
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+.ipynb_checkpoints
+
+# --- Secrets & Config (สำคัญที่สุด!) ---
+.env
+*.env
+.env.*
+credentials.json
+serviceAccountKey.json
+config.py
+*.pem
+
+# --- Large Files ---
+*.h5
+*.pth
