@@ -1,0 +1,338 @@
+.water-table-section {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 24px 28px;
+  background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.water-table-section:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.water-table-section h2,
+.water-table-section h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: clamp(20px, 4vw, 26px);
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.water-table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 16px;
+  background: rgba(103, 126, 234, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(103, 126, 234, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-group span {
+  color: #5a6c7d;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.filter-group input[type="datetime-local"],
+.water-table-controls button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 2px solid #e1e8ed;
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.filter-group input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.filter-group input[type="datetime-local"]:hover,
+.filter-group input[type="datetime-local"]:focus {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  outline: none;
+}
+
+.water-table-controls button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+}
+
+.water-table-controls button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.water-table-controls button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.water-table-controls button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #5568d3 0%, #633d8f 100%);
+  border-color: #5568d3;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.water-table-controls button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.export-button {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+  border-color: #11998e !important;
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.export-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0d7f72 0%, #2dd169 100%) !important;
+  border-color: #0d7f72 !important;
+  box-shadow: 0 6px 20px rgba(17, 153, 142, 0.4) !important;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 2px solid #e1e8ed;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.water-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.water-table th,
+.water-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #f0f3f5;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.water-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.water-table th {
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+.water-table th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.water-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.water-table th.sortable:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.water-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.water-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.water-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.water-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.water-table tbody tr:nth-child(even):hover {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+}
+
+.water-table tbody td {
+  font-weight: 500;
+}
+
+.water-table tbody td:first-child {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.water-table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #5a6c7d;
+  font-weight: 600;
+}
+
+.water-table-pagination div {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.water-table-pagination button {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.water-table-pagination button:not(:disabled):hover {
+  transform: translateX(0) scale(1.05);
+}
+
+.water-table-pagination button:first-child:hover {
+  transform: translateX(-2px) scale(1.05);
+}
+
+.water-table-pagination button:last-child:hover {
+  transform: translateX(2px) scale(1.05);
+}
+
+.water-table-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: #e1e8ed;
+  border-color: #cbd5e0;
+  color: #a0aec0;
+}
+
+/* Loading State */
+.water-table tbody tr td[colspan] {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .water-table-section {
+    max-width: 95vw;
+    margin: 1rem auto;
+    padding: 16px 20px;
+  }
+
+  .water-table-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group, .export-button {
+    width: 100%;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group input[type="datetime-local"],
+  .water-table-controls button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .water-table-pagination {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .water-table th,
+  .water-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+.date-separator {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  font-weight: 700;
+  position: sticky; /* ทำให้หัวข้อวันที่ลอยอยู่ด้านบน */
+  top: 0;
+  z-index: 5;
+}
+
+.date-cell {
+  padding: 10px 12px !important;
+  text-align: center;
+  color: #667eea;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}

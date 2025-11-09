@@ -1,0 +1,213 @@
+.water-table-section {
+  max-width: 500px; 
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.water-table-section h2,
+.water-table-section h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: clamp(20px, 4vw, 24px);
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.water-table-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-group span {
+  color: #555555;
+  font-weight: 500;
+}
+
+.filter-group input[type="datetime-local"],
+.water-table-controls button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d0d0d0;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-group input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0);
+  opacity: 0.7;
+}
+
+.filter-group input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.water-table-controls button:hover:not(:disabled) {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.export-button {
+  background-color: #0bd681 !important;
+  border-color: #0bd681 !important;
+  color: white !important;
+}
+
+.export-button:hover:not(:disabled) {
+  background-color: #0a9b5f !important;
+  border-color: #0a9b5f !important;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.water-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+  background-color: white;
+}
+
+.water-table th,
+.water-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+  color: #333333;
+}
+
+.water-table thead {
+  background-color: #f5f5f5;
+}
+
+.water-table th {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.water-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.water-table th.sortable:hover {
+  background-color: #e8e8e8;
+}
+
+.water-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.water-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.water-table tbody tr:nth-child(even):hover {
+  background-color: #f5f5f5;
+}
+
+.water-table-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.water-table-pagination div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.water-table-pagination button {
+  padding: 0.5rem 1rem;
+}
+
+.water-table-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  border-color: #d0d0d0;
+  color: #999999;
+}
+
+@media (max-width: 768px) {
+  .water-table-section {
+    max-width: 90vw;
+    margin: 1rem auto;
+  }
+
+  .water-table-controls {
+    flex-direction: column; 
+    align-items: stretch;
+  }
+
+  .filter-group, .export-button {
+    width: 100%;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group input[type="datetime-local"],
+  .water-table-controls button {
+      width: 100%;
+      text-align: center;
+  }
+  
+  .water-table-pagination {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.date-separator {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  font-weight: 700;
+  position: sticky; /* ทำให้หัวข้อวันที่ลอยอยู่ด้านบน */
+  top: 0;
+  z-index: 5;
+}
+
+.date-cell {
+  padding: 10px 12px !important;
+  text-align: center;
+  color: #667eea;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}

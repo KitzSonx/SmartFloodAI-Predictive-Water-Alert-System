@@ -1,0 +1,28 @@
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(6, 4, 40);
+  color: white;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #add8e6;
+  text-decoration: none;
+}
+
+.footer img {
+    height: 100px;
+    margin: 10px;
+}

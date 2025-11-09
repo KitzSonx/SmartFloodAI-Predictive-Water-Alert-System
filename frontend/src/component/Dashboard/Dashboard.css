@@ -1,0 +1,270 @@
+.dashboard-section {
+    max-width: 100%;
+    position: relative;
+    left: 0px;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    gap: 0rem;
+}
+
+.dashboard-section .home {
+    width: 100%;
+}
+
+
+.feed-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
+    padding: 15px 20px;
+    min-height: 340px;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.station-select {
+  margin-top: 0.5rem;
+}
+
+.feeds {
+   width: 250px;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 0.8rem;
+   color: #fff;
+}
+
+.feeds img {
+    width: 120px;
+}
+
+.feeds > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    justify-content: space-between;
+}
+
+.feeds > div span {
+    display: block;
+}
+
+.feeds div > div:first-child span:nth-child(1) {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.feeds > div > div:first-child span:nth-child(2){
+    font-size: 1rem;
+}
+
+.feeds > div > div:last-child span {
+    font-size: 2.8rem;
+    display: flex;
+}
+
+.feeds > div > div:last-child span sup {
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.feed {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.3rem;
+}
+
+
+.iframe-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.station-card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+  font-weight: 500;
+  font-size: clamp(22px, 5vw, 28px);
+  text-align: center;
+}
+
+.data-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+
+.data-grid {
+    width: 100%;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+}
+
+
+@media (min-width: 576px) {
+    .data-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.data-point {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.data-point .icon {
+  flex-shrink: 0;
+  margin-right: 1rem;
+  fill: var(--primary-color);
+}
+
+.data-point .text .label {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.data-point .text .value {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--dark-gray);
+}
+
+.last-update {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    width: 100%;
+}
+
+.form-grid {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: white;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #66afe9;
+  box-shadow: 0 0 4px rgba(102, 175, 233, 0.6);
+}
+
+.submit-btn {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.station-selector {
+  margin-bottom: 15px;
+}

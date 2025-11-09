@@ -1,0 +1,20 @@
+# Core Libraries
+pandas==2.2.2
+numpy==1.26.4
+requests
+
+# Machine Learning
+scikit-learn==1.4.2
+tensorflow # ใช้เวอร์ชันล่าสุดที่รองรับ Python 3.11
+
+# Google Cloud
+google-cloud-secret-manager
+google-cloud-storage
+joblib # สำหรับโหลด scaler.pkl
+
+# Web Framework (สำหรับ Cloud Run/Functions)
+functions-framework==3.*
+
+# Timezone Handling (เพิ่มเข้ามาใหม่)
+pytz
+
